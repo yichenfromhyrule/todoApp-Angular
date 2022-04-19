@@ -1,0 +1,8 @@
+<div *ngIf="todoItem">
+    <h2>{{todoItem.name | uppercase}} Details!</h2>
+    <div><span>id: </span>{{todoItem.id}}</div>
+    <div>
+        <label for="todoItem-name">To Do Item name: </label>
+        <input id="todoItem-name" [(ngModel)]="todoItem.name" placeholder="name">
+    </div>
+</div>
