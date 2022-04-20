@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
 import { TodoItemDetailComponent } from './todo-item-detail/todo-item-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     TodoItemsComponent,
     TodoItemDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

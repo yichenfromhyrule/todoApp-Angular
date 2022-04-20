@@ -3,14 +3,13 @@ import { ToDoItem } from '../todoItem';
 import { TodoItemService } from '../todo-item.service';
 
 @Component({
-  selector: 'app-todo-items',
-  templateUrl: './todo-items.component.html',
-  styleUrls: ['./todo-items.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class TodoItemsComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   todoItems: ToDoItem[] = [];
-
   constructor(private todoItemService: TodoItemService) { }
 
   ngOnInit(): void {
@@ -19,9 +18,7 @@ export class TodoItemsComponent implements OnInit {
 
   getToDoItems():void {
     this.todoItemService.getToDoItems()
-      .subscribe(todoItems => this.todoItems = todoItems);
+      .subscribe(todoItems => this.todoItems = todoItems.slice(1, 5));
     
   }
-  
-
 }
