@@ -34,4 +34,11 @@ export class TodoItemDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    if (this.todoItem) {
+      this.todoItemService.updateToDoItem(this.todoItem)
+        .subscribe(() => this.goBack());
+    }
+  }
+
 }

@@ -22,6 +22,15 @@ export class TodoItemsComponent implements OnInit {
       .subscribe(todoItems => this.todoItems = todoItems);
     
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.todoItemService.addToDoItem({ name } as ToDoItem)
+      .subscribe(todoItem => {
+        this.todoItems.push(todoItem);
+      });
+  }
   
 
 }

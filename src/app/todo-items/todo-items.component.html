@@ -1,5 +1,14 @@
 
 <h2>My ToDo Items</h2>
+<div>
+  <label for="new-todoItem">New todo: </label>
+  <input id="new-todoItem" #todoItemName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(todoItemName.value); todoItemName.value=''">
+    Add TodoItem
+  </button>
+</div>
 <ul class="todoItems">
   <li *ngFor="let todoItem of todoItems">
     <a routerLink="/detail/{{todoItem.id}}">
