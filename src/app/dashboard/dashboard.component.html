@@ -1,0 +1,9 @@
+<h2>Top Heroes</h2>
+<div class="todoItems-menu">
+  <a 
+    *ngFor="let todoItem of todoItems"
+    routerLink="/detail/{{todoItem.id}}"
+  >
+    {{todoItem.name}}
+  </a>
+</div>
