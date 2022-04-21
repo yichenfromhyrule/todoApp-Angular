@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TodoItemService} from './todo-item.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TODO APP';
+  constructor(private todo:TodoItemService){
+    this.todo.getToDoItems().subscribe(data=>{
+      console.warn(data);
+    })
+  }
 }
