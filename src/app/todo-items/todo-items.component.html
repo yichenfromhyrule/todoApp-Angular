@@ -1,9 +1,30 @@
 
-<h2>My ToDo Items</h2>
-<ul class="todoItems">
-  <li *ngFor="let todoItem of todoItems">
-    <a routerLink="/detail/{{todoItem.id}}">
-      <span class="badge">{{todoItem.id}}</span> {{todoItem.name}}
-    </a>
-  </li>
-</ul>
+<h2 class="my-2">Tasks </h2>
+
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Task</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let todoItem of todoItems">
+    <tr>
+      <th scope="row" class="align-middle">
+        {{todoItem.id}}
+      </th>
+      <td class="align-middle">
+        {{todoItem.name}}
+      </td>
+      <td class="align-middle text-primary">
+        waiting
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary" routerLink="/detail/{{todoItem.id}}" >View</button>
+      </td>
+
+    </tr>
+
+  </tbody>
